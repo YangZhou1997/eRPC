@@ -16,6 +16,41 @@ Some highlights:
  * A port of [Raft](https://github.com/willemt/raft) as an example. Our 3-way
    replication latency is 5.3 microseconds with traditional UDP over Ethernet.
 
+## Running on CloudLab xl170 instances
+
+Make sure the experiment NICs in xl170 instances are connected when specifying link connections on the cloudlab portal. You can also use this [profile](./xl170.profile) to spawn xl170 instances. 
+
+```
+git clone git@github.com:YangZhou1997/eRPC.git
+bash eRPC/scripts/packages/ubuntu18/required.sh
+
+git clone https://github.com/linux-rdma/rdma-core.git
+sudo apt-get install -y build-essential cmake gcc libudev-dev libnl-3-dev libnl-route-3-dev ninja-build pkg-config valgrind python3-dev cython3 python3-docutils pandoc
+cd rdma-core && cmake .
+sudo make install
+
+sudo apt install make cmake g++ gcc libnuma-dev libgflags-dev numactl
+sudo modprobe ib_uverbs
+sudo modprobe mlx4_ib
+
+wget https://fast.dpdk.org/rel/dpdk-19.11.5.tar.xz
+tar -xvf dpdk-19.11.5.tar.xz
+# Edit config/common_base by changing CONFIG_RTE_LIBRTE_MLX5_PMD and CONFIG_RTE_LIBRTE_MLX4_PMD to y instead of n.
+cd dpdk-stable-19.11.5/ && sudo make -j install T=x86_64-native-linuxapp-gcc DESTDIR=/usr
+
+sudo bash -c "echo 1024 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages"
+sudo bash -c "echo kernel.shmmax = 9223372036854775807 >> /etc/sysctl.conf"
+sudo bash -c "echo kernel.shmall = 1152921504606846720 >> /etc/sysctl.conf"
+sudo sysctl -p /etc/sysctl.conf
+
+cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
+make small_rpc_tput
+./scripts/do.sh 0 0
+./scripts/do.sh 1 0
+```
+
+Note: by default, we use `ens1f1` interface to run the experiment, which corresponds to dpdk port index of 1 (checking it via `sudo ./dpdk-stable-19.11.5/usertools/dpdk-devbind.py -s`)
+
 ## Requirements
  * Toolchain: A C++11 compiler and CMake 2.8+
  * See `scripts/packages/` for required software packages for your distro.

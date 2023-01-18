@@ -10,5 +10,5 @@
 --regular_req_size 64000
 --regular_resp_size 64000
 --regular_latency_divisor 3.0
---numa_0_ports 0
+--numa_0_ports 1
 --numa_1_ports 1

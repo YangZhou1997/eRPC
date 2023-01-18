@@ -281,13 +281,13 @@ uint32_t DpdkTransport::get_port_ipv4_addr(size_t phy_port) {
   return ipv4_from_str(ip_addr_splits[1].substr(1).c_str());
 #else
   if (kIsAzure) {
-    // This routine gets the IPv4 address of the interface called eth1
+    // This routine gets the IPv4 address of the interface called ens1f1
     int fd = socket(AF_INET, SOCK_DGRAM, 0);
     struct ifreq ifr;
     ifr.ifr_addr.sa_family = AF_INET;
-    strncpy(ifr.ifr_name, "eth1", IFNAMSIZ - 1);
+    strncpy(ifr.ifr_name, "ens1f1", IFNAMSIZ - 1);
     int ret = ioctl(fd, SIOCGIFADDR, &ifr);
-    rt_assert(ret == 0, "DPDK: Failed to get IPv4 address of eth1");
+    rt_assert(ret == 0, "DPDK: Failed to get IPv4 address of ens1f1");
     close(fd);
     return ntohl(
         reinterpret_cast<sockaddr_in *>(&ifr.ifr_addr)->sin_addr.s_addr);

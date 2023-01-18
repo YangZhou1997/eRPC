@@ -7,5 +7,5 @@
 --max_log_entry_size 2048
 --prints_per_log_entry_size 5
 --use_rotating 1
---numa_0_ports 0
+--numa_0_ports 1
 --numa_1_ports 1

@@ -7,5 +7,5 @@
 --num_proc_0_threads 1
 --num_proc_other_threads 1
 --concurrency 32
---numa_0_ports 0
+--numa_0_ports 1
 --numa_1_ports 1

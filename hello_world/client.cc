@@ -23,6 +23,5 @@ int main() {
 
   rpc->enqueue_request(session_num, kReqType, &req, &resp, cont_func, nullptr);
   rpc->run_event_loop(100);
-
   delete rpc;
 }

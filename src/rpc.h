@@ -1094,6 +1094,20 @@ class Rpc {
   size_t pre_resp_msgbuf_size_ = TTr::kMaxDataPerPkt;
 };
 
+/// Return seconds elapsed since timestamp \p t0
+static double sec_since(const struct timespec &t0) {
+  struct timespec t1;
+  clock_gettime(CLOCK_REALTIME, &t1);
+  return (t1.tv_sec - t0.tv_sec) + (t1.tv_nsec - t0.tv_nsec) / 1000000000.0;
+}
+
+/// Return nanoseconds elapsed since timestamp \p t0
+static double ns_since(const struct timespec &t0) {
+  struct timespec t1;
+  clock_gettime(CLOCK_REALTIME, &t1);
+  return (t1.tv_sec - t0.tv_sec) * 1000000000.0 + (t1.tv_nsec - t0.tv_nsec);
+}
+
 // This goes at the end of every Rpc implementation file to force compilation
 #define FORCE_COMPILE_TRANSPORTS template class Rpc<CTransport>;
 }  // namespace erpc

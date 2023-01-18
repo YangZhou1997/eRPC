@@ -8,5 +8,5 @@
 --num_keys 250000000
 --range_size 128
 --range_req_percent 0
---numa_0_ports 0
+--numa_0_ports 1
 --numa_1_ports 1,3

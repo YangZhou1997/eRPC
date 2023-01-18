@@ -6,5 +6,5 @@
 --req_size 32
 --resp_size 32
 --num_processes 2
---numa_0_ports 0
+--numa_0_ports 1
 --numa_1_ports 1,3
