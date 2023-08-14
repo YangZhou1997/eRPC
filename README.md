@@ -26,8 +26,8 @@ bash eRPC/scripts/packages/ubuntu18/required.sh
 
 git clone https://github.com/linux-rdma/rdma-core.git
 sudo apt-get install -y build-essential cmake gcc libudev-dev libnl-3-dev libnl-route-3-dev ninja-build pkg-config valgrind python3-dev cython3 python3-docutils pandoc
-pushd rdma-core && cmake .
-sudo make install && popd
+pushd rdma-core && cmake . -DCMAKE_INSTALL_PREFIX:PATH=/usr
+sudo make install -j && popd
 
 sudo apt install make cmake g++ gcc libnuma-dev libgflags-dev numactl -y
 sudo modprobe ib_uverbs
