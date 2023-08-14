@@ -26,8 +26,8 @@ bash eRPC/scripts/packages/ubuntu18/required.sh
 
 git clone https://github.com/linux-rdma/rdma-core.git
 sudo apt-get install -y build-essential cmake gcc libudev-dev libnl-3-dev libnl-route-3-dev ninja-build pkg-config valgrind python3-dev cython3 python3-docutils pandoc
-cd rdma-core && cmake .
-sudo make install
+pushd rdma-core && cmake .
+sudo make install && popd
 
 sudo apt install make cmake g++ gcc libnuma-dev libgflags-dev numactl -y
 sudo modprobe ib_uverbs
@@ -35,15 +35,16 @@ sudo modprobe mlx4_ib
 
 wget https://fast.dpdk.org/rel/dpdk-19.11.5.tar.xz
 tar -xvf dpdk-19.11.5.tar.xz
-# Edit config/common_base by changing CONFIG_RTE_LIBRTE_MLX5_PMD and CONFIG_RTE_LIBRTE_MLX4_PMD to y instead of n.
-cd dpdk-stable-19.11.5/ && sudo make -j install T=x86_64-native-linuxapp-gcc DESTDIR=/usr
+# Edit dpdk-stable-19.11.5/config/common_base by changing CONFIG_RTE_LIBRTE_MLX5_PMD and CONFIG_RTE_LIBRTE_MLX4_PMD to y instead of n.
+pushd dpdk-stable-19.11.5/ && sudo make -j install T=x86_64-native-linuxapp-gcc DESTDIR=/usr
+popd
 
 sudo bash -c "echo 1024 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages"
 sudo bash -c "echo kernel.shmmax = 9223372036854775807 >> /etc/sysctl.conf"
 sudo bash -c "echo kernel.shmall = 1152921504606846720 >> /etc/sysctl.conf"
 sudo sysctl -p /etc/sysctl.conf
 
-cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
+cd eRPC && cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
 make small_rpc_tput
 ./scripts/do.sh 0 0
 ./scripts/do.sh 1 0
