@@ -29,7 +29,7 @@ sudo apt-get install -y build-essential cmake gcc libudev-dev libnl-3-dev libnl-
 cd rdma-core && cmake .
 sudo make install
 
-sudo apt install make cmake g++ gcc libnuma-dev libgflags-dev numactl
+sudo apt install make cmake g++ gcc libnuma-dev libgflags-dev numactl -y
 sudo modprobe ib_uverbs
 sudo modprobe mlx4_ib
 
