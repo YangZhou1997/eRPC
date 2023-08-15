@@ -1,6 +1,8 @@
 #include <gflags/gflags.h>
 #include <signal.h>
+
 #include <cstring>
+
 #include "../apps_common.h"
 #include "rpc.h"
 #include "util/autorun_helpers.h"
@@ -26,6 +28,10 @@ DEFINE_uint64(batch_size, 0, "Request batch size");
 DEFINE_uint64(msg_size, 0, "Request and response size");
 DEFINE_uint64(num_threads, 0, "Number of foreground threads per machine");
 DEFINE_uint64(concurrency, 0, "Concurrent batches per thread");
+
+DEFINE_uint64(is_client, 0, "Whether this is the load generator");
+DEFINE_uint64(num_dst_threads, 0,
+              "Number of foreground threads for the destination");
 
 volatile sig_atomic_t ctrl_c_pressed = 0;
 void ctrl_c_handler(int) { ctrl_c_pressed = 1; }
@@ -242,6 +248,8 @@ void app_cont_func(void *_context, void *_tag) {
 }
 
 void connect_sessions(AppContext &c) {
+  if (!FLAGS_is_client) return;  // server does not initiate sessions to clients
+
   // Create a session to each thread in the cluster except to:
   // (a) all threads on this machine if DPDK is used (because no loopback), or
   // (b) this thread if a non-DPDK transport is used.
@@ -258,7 +266,7 @@ void connect_sessions(AppContext &c) {
              FLAGS_process_id, c.thread_id_, remote_uri.c_str());
     }
 
-    for (size_t t_i = 0; t_i < FLAGS_num_threads; t_i++) {
+    for (size_t t_i = 0; t_i < FLAGS_num_dst_threads; t_i++) {
       if (FLAGS_process_id == p_i && c.thread_id_ == t_i) continue;
       int session_num = c.rpc_->create_session(remote_uri, t_i);
       erpc::rt_assert(session_num >= 0, "Failed to create session");
@@ -310,11 +318,13 @@ void print_stats(AppContext &c) {
   sprintf(lat_stat, "[%.2f, %.2f us]", c.latency.perc(.50) / kAppLatFac,
           c.latency.perc(.99) / kAppLatFac);
   char rate_stat[100];
-  sprintf(rate_stat, "[%.2f, %.2f, %.2f, %.2f Gbps]",
-          erpc::kCcRateComp ? session_tput.at(num_sessions * 0.00) : -1,
-          erpc::kCcRateComp ? session_tput.at(num_sessions * 0.05) : -1,
-          erpc::kCcRateComp ? session_tput.at(num_sessions * 0.50) : -1,
-          erpc::kCcRateComp ? session_tput.at(num_sessions * 0.95) : -1);
+  if (FLAGS_is_client) {
+    sprintf(rate_stat, "[%.2f, %.2f, %.2f, %.2f Gbps]",
+            erpc::kCcRateComp ? session_tput.at(num_sessions * 0.00) : -1,
+            erpc::kCcRateComp ? session_tput.at(num_sessions * 0.05) : -1,
+            erpc::kCcRateComp ? session_tput.at(num_sessions * 0.50) : -1,
+            erpc::kCcRateComp ? session_tput.at(num_sessions * 0.95) : -1);
+  }
 
   printf(
       "Process %zu, thread %zu: %.3f Mrps, re_tx = %zu, still_in_wheel = %zu. "
@@ -352,7 +362,8 @@ void thread_func(size_t thread_id, app_stats_t *app_stats, erpc::Nexus *nexus) {
   AppContext c;
   c.thread_id_ = thread_id;
   c.app_stats = app_stats;
-  if (thread_id == 0) c.tmp_stat_ = new TmpStat(app_stats_t::get_template_str());
+  if (thread_id == 0)
+    c.tmp_stat_ = new TmpStat(app_stats_t::get_template_str());
 
   std::vector<size_t> port_vec = flags_get_numa_ports(FLAGS_numa_node);
   erpc::rt_assert(port_vec.size() > 0);
@@ -381,7 +392,9 @@ void thread_func(size_t thread_id, app_stats_t *app_stats, erpc::Nexus *nexus) {
 
   // Start work
   clock_gettime(CLOCK_REALTIME, &c.tput_t0);
-  for (size_t i = 0; i < FLAGS_concurrency; i++) send_reqs(&c, i);
+  if (FLAGS_is_client) {  // server does not send requests to clients
+    for (size_t i = 0; i < FLAGS_concurrency; i++) send_reqs(&c, i);
+  }
 
   for (size_t i = 0; i < FLAGS_test_ms; i += 1000) {
     rpc.run_event_loop(kAppEvLoopMs);  // 1 second
