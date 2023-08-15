@@ -1,5 +1,6 @@
 #include <gflags/gflags.h>
 #include <signal.h>
+#include <stdlib.h>
 
 #include <cstring>
 
@@ -12,8 +13,7 @@
 static constexpr size_t kAppEvLoopMs = 1000;  // Duration of event loop
 static constexpr bool kAppVerbose = false;    // Print debug info on datapath
 static constexpr bool kAppMeasureLatency = false;
-static constexpr double kAppLatFac = 3.0;        // Precision factor for latency
-static constexpr bool kAppPayloadCheck = false;  // Check full request/response
+static constexpr double kAppLatFac = 3.0;  // Precision factor for latency
 
 // Optimization knobs. Set to true to disable optimization.
 static constexpr bool kAppOptDisablePreallocResp = false;
@@ -23,6 +23,10 @@ static constexpr size_t kAppReqType = 1;    // eRPC request type
 static constexpr uint8_t kAppDataByte = 3;  // Data transferred in req & resp
 static constexpr size_t kAppMaxBatchSize = 32;
 static constexpr size_t kAppMaxConcurrency = 128;
+
+#define TABLE_SIZE 1000000
+#define METADATA_SIZE (sizeof(uint8_t) + sizeof(uint32_t) + sizeof(uint32_t))
+static void *hash_table[TABLE_SIZE];
 
 DEFINE_uint64(batch_size, 0, "Request batch size");
 DEFINE_uint64(msg_size, 0, "Request and response size");
@@ -138,14 +142,10 @@ void send_reqs(AppContext *c, size_t batch_i) {
              FLAGS_process_id, c->rpc_->get_rpc_id(), batch_i);
     }
 
-    if (!kAppPayloadCheck) {
-      bc.req_msgbuf[i].buf_[0] = kAppDataByte;  // Touch req MsgBuffer
-    } else {
-      // Fill the request MsgBuffer with a checkable sequence
-      uint8_t *buf = bc.req_msgbuf[i].buf_;
-      buf[0] = c->fastrand_.next_u32();
-      for (size_t j = 1; j < FLAGS_msg_size; j++) buf[j] = buf[0] + j;
-    }
+    uint8_t *req_buf = bc.req_msgbuf[i].buf_;
+    req_buf[0] = kAppDataByte;  // Touch req MsgBuffer
+    *reinterpret_cast<uint32_t *>(&req_buf[1]) =
+        c->fastrand_.next_u32() % TABLE_SIZE;
 
     if (kAppMeasureLatency) bc.req_tsc[i] = erpc::rdtsc();
 
@@ -161,41 +161,25 @@ void req_handler(erpc::ReqHandle *req_handle, void *_context) {
   c->stat_req_rx_tot++;
 
   const erpc::MsgBuffer *req_msgbuf = req_handle->get_req_msgbuf();
-  assert(req_msgbuf->get_data_size() == FLAGS_msg_size);
+  assert(req_msgbuf->get_data_size() == FLAGS_msg_size + METADATA_SIZE);
 
   // RX ring request optimization knob
   if (kAppOptDisableRxRingReq) {
     // Simulate copying the request off the RX ring
-    auto copy_msgbuf = c->rpc_->alloc_msg_buffer(FLAGS_msg_size);
+    auto copy_msgbuf =
+        c->rpc_->alloc_msg_buffer(FLAGS_msg_size + METADATA_SIZE);
     assert(copy_msgbuf.buf_ != nullptr);
-    memcpy(copy_msgbuf.buf_, req_msgbuf->buf_, FLAGS_msg_size);
+    memcpy(copy_msgbuf.buf_, req_msgbuf->buf_, FLAGS_msg_size + METADATA_SIZE);
     c->rpc_->free_msg_buffer(copy_msgbuf);
   }
 
   // Preallocated response optimization knob
-  if (kAppOptDisablePreallocResp) {
-    erpc::MsgBuffer &resp_msgbuf = req_handle->dyn_resp_msgbuf_;
-    resp_msgbuf = c->rpc_->alloc_msg_buffer(FLAGS_msg_size);
-    assert(resp_msgbuf.buf_ != nullptr);
-
-    if (!kAppPayloadCheck) {
-      resp_msgbuf.buf_[0] = req_msgbuf->buf_[0];
-    } else {
-      memcpy(resp_msgbuf.buf_, req_msgbuf->buf_, FLAGS_msg_size);
-    }
-    c->rpc_->enqueue_response(req_handle, &req_handle->dyn_resp_msgbuf_);
-  } else {
-    erpc::Rpc<erpc::CTransport>::resize_msg_buffer(
-        &req_handle->pre_resp_msgbuf_, FLAGS_msg_size);
-
-    if (!kAppPayloadCheck) {
-      req_handle->pre_resp_msgbuf_.buf_[0] = req_msgbuf->buf_[0];
-    } else {
-      memcpy(req_handle->pre_resp_msgbuf_.buf_, req_msgbuf->buf_,
-             FLAGS_msg_size);
-    }
-    c->rpc_->enqueue_response(req_handle, &req_handle->pre_resp_msgbuf_);
-  }
+  erpc::Rpc<erpc::CTransport>::resize_msg_buffer(
+      &req_handle->pre_resp_msgbuf_, FLAGS_msg_size + METADATA_SIZE);
+  uint8_t *req_buf = req_msgbuf->buf_;
+  auto ht_idx = *reinterpret_cast<uint32_t *>(&req_buf[1]);
+  memcpy(req_handle->pre_resp_msgbuf_.buf_, hash_table[ht_idx], FLAGS_msg_size);
+  c->rpc_->enqueue_response(req_handle, &req_handle->pre_resp_msgbuf_);
 }
 
 void app_cont_func(void *_context, void *_tag) {
@@ -204,23 +188,8 @@ void app_cont_func(void *_context, void *_tag) {
 
   BatchContext &bc = c->batch_arr[tag.s.batch_i];
   const erpc::MsgBuffer &resp_msgbuf = bc.resp_msgbuf[tag.s.msgbuf_i];
-  assert(resp_msgbuf.get_data_size() == FLAGS_msg_size);
-
-  if (!kAppPayloadCheck) {
-    // Do a cheap check, but touch the response MsgBuffer
-    if (unlikely(resp_msgbuf.buf_[0] != kAppDataByte)) {
-      fprintf(stderr, "Invalid response.\n");
-      exit(-1);
-    }
-  } else {
-    // Check the full response MsgBuffer
-    for (size_t i = 0; i < FLAGS_msg_size; i++) {
-      const uint8_t *buf = resp_msgbuf.buf_;
-      if (unlikely(buf[i] != static_cast<uint8_t>(buf[0] + i))) {
-        fprintf(stderr, "Invalid resp at %zu (%u, %u)\n", i, buf[0], buf[i]);
-        exit(-1);
-      }
-    }
+  if (resp_msgbuf.get_data_size() != FLAGS_msg_size + METADATA_SIZE) {
+    printf("resp data_size error\n");
   }
 
   if (kAppVerbose) {
@@ -380,8 +349,10 @@ void thread_func(size_t thread_id, app_stats_t *app_stats, erpc::Nexus *nexus) {
   for (size_t i = 0; i < FLAGS_concurrency; i++) {
     BatchContext &bc = c.batch_arr[i];
     for (size_t j = 0; j < FLAGS_batch_size; j++) {
-      bc.req_msgbuf[j] = rpc.alloc_msg_buffer_or_die(FLAGS_msg_size);
-      bc.resp_msgbuf[j] = rpc.alloc_msg_buffer_or_die(FLAGS_msg_size);
+      bc.req_msgbuf[j] =
+          rpc.alloc_msg_buffer_or_die(FLAGS_msg_size + METADATA_SIZE);
+      bc.resp_msgbuf[j] =
+          rpc.alloc_msg_buffer_or_die(FLAGS_msg_size + METADATA_SIZE);
     }
   }
 
@@ -410,6 +381,10 @@ int main(int argc, char **argv) {
   erpc::rt_assert(FLAGS_batch_size <= kAppMaxBatchSize, "Invalid batch size");
   erpc::rt_assert(FLAGS_concurrency <= kAppMaxConcurrency, "Invalid cncrrncy.");
   erpc::rt_assert(FLAGS_numa_node <= 1, "Invalid NUMA node");
+
+  for (int i = 0; i < TABLE_SIZE; i++) {
+    hash_table[i] = malloc(FLAGS_msg_size);
+  }
 
   // We create a bit fewer sessions
   const size_t num_sessions = 2 * FLAGS_num_processes * FLAGS_num_threads;
