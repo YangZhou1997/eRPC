@@ -24,12 +24,13 @@ Make sure the experiment NICs in xl170 instances are connected when specifying l
 git clone git@github.com:YangZhou1997/eRPC.git
 bash eRPC/scripts/packages/ubuntu18/required.sh
 
+sudo apt-get install build-essential cmake gcc libudev-dev libnl-3-dev libnl-route-3-dev ninja-build pkg-config valgrind python3-dev cython3 python3-docutils pandoc -y
+sudo apt-get install make cmake g++ gcc libnuma-dev libgflags-dev numactl -y
+
 git clone https://github.com/linux-rdma/rdma-core.git
-sudo apt-get install -y build-essential cmake gcc libudev-dev libnl-3-dev libnl-route-3-dev ninja-build pkg-config valgrind python3-dev cython3 python3-docutils pandoc
 pushd rdma-core && cmake . -DCMAKE_INSTALL_PREFIX:PATH=/usr
 sudo make install -j && popd
 
-sudo apt install make cmake g++ gcc libnuma-dev libgflags-dev numactl -y
 sudo modprobe ib_uverbs
 sudo modprobe mlx4_ib
 
@@ -45,7 +46,7 @@ sudo bash -c "echo kernel.shmall = 1152921504606846720 >> /etc/sysctl.conf"
 sudo sysctl -p /etc/sysctl.conf
 
 cd eRPC && cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
-make small_rpc_tput
+make small_rpc_tput -j
 # change scripts/autorun_process_file as following: 
 # <Public IPv4 address of node #1> 31850 0
 # <Public IPv4 address of node #2> 31850 0
@@ -54,8 +55,8 @@ make small_rpc_tput
 ./scripts/do.sh 1 0
 
 # or
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 64 --num_processes 2 --numa_0_ports 1 --numa_1_ports 1,3 --process_id=0 --numa_node=0 --num_threads 10 --is_client 1 --num_dst_threads 1
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 64 --num_processes 2 --numa_0_ports 1 --numa_1_ports 1,3 --process_id=1 --numa_node=0 --num_threads 1 --is_client 0
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 1 --numa_1_ports 1,3 --process_id=0 --numa_node=0 --num_threads 10 --is_client 1 --num_dst_threads 1
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 1 --numa_1_ports 1,3 --process_id=1 --numa_node=0 --num_threads 1 --is_client 0
 # this gives us around 3.5 Mops/core
 ```
 

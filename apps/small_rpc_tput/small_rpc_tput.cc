@@ -1,5 +1,7 @@
 #include <gflags/gflags.h>
+#include <linux/types.h>
 #include <signal.h>
+#include <stddef.h>
 #include <stdlib.h>
 
 #include <cstring>
@@ -24,7 +26,9 @@ static constexpr uint8_t kAppDataByte = 3;  // Data transferred in req & resp
 static constexpr size_t kAppMaxBatchSize = 32;
 static constexpr size_t kAppMaxConcurrency = 128;
 
-#define TABLE_SIZE 1000000
+#define TABLE_SIZE 80000000ull
+#define KEY_SPACE_SIZE 27000000ull
+#define NON_EXISTING_KEY_SPACE_SIZE ((uint64_t)(KEY_SPACE_SIZE * 3 / 7))
 #define METADATA_SIZE (sizeof(uint8_t) + sizeof(uint32_t) + sizeof(uint32_t))
 static void *hash_table[TABLE_SIZE];
 
@@ -36,6 +40,56 @@ DEFINE_uint64(concurrency, 0, "Concurrent batches per thread");
 DEFINE_uint64(is_client, 0, "Whether this is the load generator");
 DEFINE_uint64(num_dst_threads, 0,
               "Number of foreground threads for the destination");
+
+// Compression function for Merkle-Damgard construction.
+// This function is generated using the framework provided.
+static __u64 fasthash_mix(__u64 h) {
+  h ^= h >> 23;
+  h *= 0x2127599bf4325c37ULL;
+  h ^= h >> 47;
+  return h;
+}
+
+__u64 fasthash64(const void *buf, __u64 len, __u64 seed) {
+  const __u64 m = 0x880355f21e6d1965ULL;
+  const __u64 *pos = (const __u64 *)buf;
+  const __u64 *end = pos + (len / 8);
+  const unsigned char *pos2;
+  __u64 h = seed ^ (len * m);
+  __u64 v;
+
+  while (pos != end) {
+    v = *pos++;
+    h ^= fasthash_mix(v);
+    h *= m;
+  }
+
+  pos2 = (const unsigned char *)pos;
+  v = 0;
+
+  switch (len & 7) {
+    case 7: v ^= (__u64)pos2[6] << 48;
+    case 6: v ^= (__u64)pos2[5] << 40;
+    case 5: v ^= (__u64)pos2[4] << 32;
+    case 4: v ^= (__u64)pos2[3] << 24;
+    case 3: v ^= (__u64)pos2[2] << 16;
+    case 2: v ^= (__u64)pos2[1] << 8;
+    case 1:
+      v ^= (__u64)pos2[0];
+      h ^= fasthash_mix(v);
+      h *= m;
+  }
+
+  return fasthash_mix(h);
+}
+
+__u32 fasthash32(const void *buf, __u64 len, __u32 seed) {
+  // the following trick converts the 64-bit hashcode to Fermat
+  // residue, which shall retain information from both the higher
+  // and lower parts of hashcode.
+  __u64 h = fasthash64(buf, len, seed);
+  return h - (h >> 32);
+}
 
 volatile sig_atomic_t ctrl_c_pressed = 0;
 void ctrl_c_handler(int) { ctrl_c_pressed = 1; }
@@ -145,7 +199,8 @@ void send_reqs(AppContext *c, size_t batch_i) {
     uint8_t *req_buf = bc.req_msgbuf[i].buf_;
     req_buf[0] = kAppDataByte;  // Touch req MsgBuffer
     *reinterpret_cast<uint32_t *>(&req_buf[1]) =
-        c->fastrand_.next_u32() % TABLE_SIZE;
+        c->fastrand_.next_u32() %
+        (KEY_SPACE_SIZE + NON_EXISTING_KEY_SPACE_SIZE);
 
     if (kAppMeasureLatency) bc.req_tsc[i] = erpc::rdtsc();
 
@@ -177,8 +232,17 @@ void req_handler(erpc::ReqHandle *req_handle, void *_context) {
   erpc::Rpc<erpc::CTransport>::resize_msg_buffer(
       &req_handle->pre_resp_msgbuf_, FLAGS_msg_size + METADATA_SIZE);
   uint8_t *req_buf = req_msgbuf->buf_;
-  auto ht_idx = *reinterpret_cast<uint32_t *>(&req_buf[1]);
-  memcpy(req_handle->pre_resp_msgbuf_.buf_, hash_table[ht_idx], FLAGS_msg_size);
+  uint64_t key = *reinterpret_cast<uint32_t *>(&req_buf[1]);
+  auto ht_idx = fasthash64((void *)&key, sizeof(uint64_t), 0xdeadbeaf) %
+                (KEY_SPACE_SIZE + NON_EXISTING_KEY_SPACE_SIZE);
+  if (key < KEY_SPACE_SIZE) {
+    memcpy(req_handle->pre_resp_msgbuf_.buf_, hash_table[ht_idx],
+           FLAGS_msg_size);
+  } else {
+    // Simulate key loopup
+    uint64_t *keys = (uint64_t *)hash_table[ht_idx];
+    if (keys[0] == key || keys[1] == key) printf("bingo");
+  }
   c->rpc_->enqueue_response(req_handle, &req_handle->pre_resp_msgbuf_);
 }
 
@@ -382,7 +446,7 @@ int main(int argc, char **argv) {
   erpc::rt_assert(FLAGS_concurrency <= kAppMaxConcurrency, "Invalid cncrrncy.");
   erpc::rt_assert(FLAGS_numa_node <= 1, "Invalid NUMA node");
 
-  for (int i = 0; i < TABLE_SIZE; i++) {
+  for (uint64_t i = 0; i < TABLE_SIZE; i++) {
     hash_table[i] = malloc(FLAGS_msg_size);
   }
 
