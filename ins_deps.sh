@@ -19,8 +19,7 @@ sudo modprobe mlx4_ib
 export RTE_SDK=~/dpdk
 git clone --depth 1 --branch 'v21.11' https://github.com/DPDK/dpdk.git "${RTE_SDK}"
 pushd "${RTE_SDK}" && meson build -Dexamples='' -Denable_kmods=false -Dtests=false -Ddisable_drivers='raw/*,crypto/*,baseband/*,dma/*'
-pushd build/ && DESTDIR="${RTE_SDK}/build/install" ninja install
-popd
+pushd build && DESTDIR="${RTE_SDK}/build/install" ninja install && popd
 popd
 
 popd

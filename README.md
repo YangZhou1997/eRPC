@@ -23,6 +23,7 @@ Make sure the experiment NICs in xl170 instances are connected when specifying l
 ```
 git clone git@github.com:YangZhou1997/eRPC.git
 cd eRPC && git checkout r650 && ./ins_deps.sh
+
 export RTE_SDK=~/dpdk
 make small_rpc_tput -j
 
@@ -38,13 +39,15 @@ autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verb
 
 # this gives us around 2.7 Mops/core
 
-# run small_rpc_tput with three machines:  
+# run small_rpc_tput with four machines:  
 
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 3 --numa_0_ports 2 --numa_1_ports 2 --process_id=0 --numa_node=1 --num_threads 4 --is_client 0
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 4 --numa_0_ports 2 --numa_1_ports 2 --process_id=0 --numa_node=1 --num_threads 8 --is_client 0
 
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 3 --numa_0_ports 2 --numa_1_ports 2 --process_id=1 --numa_node=1 --num_threads 16 --num_dst_threads 4 --is_client 1
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 4 --numa_0_ports 2 --numa_1_ports 2 --process_id=1 --numa_node=1 --num_threads 64 --num_dst_threads 8 --is_client 1
 
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 3 --numa_0_ports 2 --numa_1_ports 2 --process_id=2 --numa_node=1 --num_threads 16 --num_dst_threads 4 --is_client 1
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 4 --numa_0_ports 2 --numa_1_ports 2 --process_id=2 --numa_node=1 --num_threads 64 --num_dst_threads 8 --is_client 1
+
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 4 --numa_0_ports 2 --numa_1_ports 2 --process_id=3 --numa_node=1 --num_threads 64 --num_dst_threads 8 --is_client 1
 
 ```
 
