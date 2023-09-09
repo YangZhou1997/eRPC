@@ -22,7 +22,7 @@ Make sure the experiment NICs in xl170 instances are connected when specifying l
 
 ```
 git clone git@github.com:YangZhou1997/eRPC.git
-cd eRPC && ./ins_deps.sh
+cd eRPC && git checkout r650 && ./ins_deps.sh
 
 # change scripts/autorun_process_file as following: 
 <Public IPv4 address of node #1> 31850 0
