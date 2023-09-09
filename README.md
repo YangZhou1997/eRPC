@@ -29,15 +29,22 @@ make small_rpc_tput -j
 <Public IPv4 address of node #1> 31850 0
 <Public IPv4 address of node #2> 31850 0
 
-# run small_rpc_tput by: 
+# run small_rpc_tput with two machines:  
 
 autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 2 --numa_1_ports 2 --process_id=0 --numa_node=1 --num_threads 1 --is_client 0
 
 autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 2 --numa_1_ports 2 --process_id=1 --numa_node=1 --num_threads 64 --num_dst_threads 1 --is_client 1
 
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 2 --numa_1_ports 2 --process_id=2 --numa_node=1 --num_threads 64 --num_dst_threads 1 --is_client 1
-
 # this gives us around 2.7 Mops/core
+
+# run small_rpc_tput with three machines:  
+
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 3 --numa_0_ports 2 --numa_1_ports 2 --process_id=0 --numa_node=1 --num_threads 1 --is_client 0
+
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 3 --numa_0_ports 2 --numa_1_ports 2 --process_id=1 --numa_node=1 --num_threads 64 --num_dst_threads 1 --is_client 1
+
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 3 --numa_0_ports 2 --numa_1_ports 2 --process_id=2 --numa_node=1 --num_threads 64 --num_dst_threads 1 --is_client 1
+
 ```
 
 Note: by default, we use `ens2f0np0` interface to run the experiment, which corresponds to dpdk port index of 2 (checking it via `sudo ./dpdk-stable-19.11.5/usertools/dpdk-devbind.py -s`)
