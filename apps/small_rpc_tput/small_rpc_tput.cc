@@ -24,7 +24,7 @@ static constexpr bool kAppOptDisableRxRingReq = false;
 static constexpr size_t kAppReqType = 1;    // eRPC request type
 static constexpr uint8_t kAppDataByte = 3;  // Data transferred in req & resp
 static constexpr size_t kAppMaxBatchSize = 32;
-static constexpr size_t kAppMaxConcurrency = 128;
+static constexpr size_t kAppMaxConcurrency = 256;
 
 #define TABLE_SIZE 80000000ull
 #define KEY_SPACE_SIZE 27000000ull
@@ -364,7 +364,7 @@ void print_stats(AppContext &c) {
       c.rpc_->pkt_loss_stats_.still_in_wheel_during_retx_,
       c.stat_resp_rx_tot / 1000, c.stat_req_rx_tot / 1000, min_resps / 1000,
       max_resps / 1000, kAppMeasureLatency ? lat_stat : "N/A",
-      erpc::kCcRateComp ? rate_stat : "N/A");
+      (erpc::kCcRateComp && FLAGS_is_client) ? rate_stat : "N/A");
 
   if (c.thread_id_ == 0) {
     app_stats_t accum;

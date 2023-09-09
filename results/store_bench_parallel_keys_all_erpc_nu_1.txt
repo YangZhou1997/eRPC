@@ -1,0 +1,268 @@
+result 0:
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1324K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1324K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 0: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1308K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 1: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1308K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 2: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1308K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 4: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1306K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 3: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1306K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 5: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1307K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1306K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1308K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 0: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1313K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 1: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1322K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 2: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1322K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 4: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1322K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 3: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1319K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 5: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1321K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1322K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1320K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 0: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1319K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 1: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1310K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 2: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1310K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 4: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1311K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 3: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1307K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 5: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1310K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1311K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1310K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 0: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1290K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 1: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1292K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 2: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1296K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 4: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1294K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 3: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1293K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 5: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1295K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1297K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1294K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 0: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1271K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 1: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1270K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 2: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1268K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 4: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1269K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 3: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1269K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 5: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1270K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1268K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1267K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 0: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1284K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 1: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1291K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 2: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1291K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 4: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1288K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 3: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1292K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 5: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1295K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 6: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1292K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 0, thread 7: 0.000 Mrps, re_tx = 0, still_in_wheel = 0. RX: 0K resps, 1290K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+result 1:
+Invalid log level: 0
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+result 2:
+Process 1, thread 34: 0.034 Mrps, re_tx = 4761, still_in_wheel = 0. RX: 33K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 3: 0.033 Mrps, re_tx = 4942, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 52: 0.032 Mrps, re_tx = 4645, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 18: 0.033 Mrps, re_tx = 4517, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 17: 0.033 Mrps, re_tx = 4552, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 24: 0.033 Mrps, re_tx = 4701, still_in_wheel = 0. RX: 33K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 60: 0.032 Mrps, re_tx = 4499, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 6: 0.033 Mrps, re_tx = 4599, still_in_wheel = 0. RX: 33K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 58: 0.032 Mrps, re_tx = 5152, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 8: 0.032 Mrps, re_tx = 4591, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 57: 0.032 Mrps, re_tx = 4962, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 11: 0.032 Mrps, re_tx = 4614, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 29: 0.033 Mrps, re_tx = 4865, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 61: 0.032 Mrps, re_tx = 4559, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 31: 0.033 Mrps, re_tx = 5074, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 14: 0.032 Mrps, re_tx = 4883, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 63: 0.033 Mrps, re_tx = 5033, still_in_wheel = 0. RX: 33K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 33: 0.032 Mrps, re_tx = 4730, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 26: 0.033 Mrps, re_tx = 4628, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 35: 0.031 Mrps, re_tx = 4447, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 16: 0.032 Mrps, re_tx = 4522, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 46: 0.032 Mrps, re_tx = 5016, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 47: 0.033 Mrps, re_tx = 4553, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 13: 0.032 Mrps, re_tx = 4704, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 43: 0.032 Mrps, re_tx = 4641, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 48: 0.031 Mrps, re_tx = 5103, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 19: 0.033 Mrps, re_tx = 5116, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 53: 0.032 Mrps, re_tx = 4739, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 22: 0.033 Mrps, re_tx = 4900, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 56: 0.033 Mrps, re_tx = 5170, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 20: 0.033 Mrps, re_tx = 4554, still_in_wheel = 0. RX: 33K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 32: 0.031 Mrps, re_tx = 4679, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 25: 0.032 Mrps, re_tx = 5128, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 28: 0.033 Mrps, re_tx = 4601, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 59: 0.033 Mrps, re_tx = 4918, still_in_wheel = 0. RX: 33K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 23: 0.031 Mrps, re_tx = 4980, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 37: 0.032 Mrps, re_tx = 4313, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 38: 0.031 Mrps, re_tx = 5215, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 62: 0.031 Mrps, re_tx = 4641, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 27: 0.032 Mrps, re_tx = 4806, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 50: 0.032 Mrps, re_tx = 4473, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 39: 0.031 Mrps, re_tx = 4998, still_in_wheel = 0. RX: 30K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 42: 0.032 Mrps, re_tx = 4991, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 49: 0.032 Mrps, re_tx = 4705, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 51: 0.032 Mrps, re_tx = 4639, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 41: 0.031 Mrps, re_tx = 4202, still_in_wheel = 0. RX: 30K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 45: 0.032 Mrps, re_tx = 5116, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 40: 0.032 Mrps, re_tx = 4612, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 30: 0.032 Mrps, re_tx = 4503, still_in_wheel = 0. RX: 31K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 1, thread 36: 0.033 Mrps, re_tx = 5081, still_in_wheel = 0. RX: 32K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+result 3:
+Invalid log level: 0
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+result 4:
+Process 2, thread 13: 0.005 Mrps, re_tx = 6689, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 35: 0.005 Mrps, re_tx = 6706, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 55: 0.005 Mrps, re_tx = 6123, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 20: 0.006 Mrps, re_tx = 7792, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 16: 0.005 Mrps, re_tx = 7078, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 18: 0.005 Mrps, re_tx = 6330, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 21: 0.005 Mrps, re_tx = 5975, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 57: 0.005 Mrps, re_tx = 7283, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 22: 0.005 Mrps, re_tx = 6334, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 28: 0.005 Mrps, re_tx = 8195, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 50: 0.005 Mrps, re_tx = 6935, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 24: 0.005 Mrps, re_tx = 7281, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 60: 0.005 Mrps, re_tx = 7484, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 26: 0.005 Mrps, re_tx = 6368, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 33: 0.005 Mrps, re_tx = 6528, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 63: 0.005 Mrps, re_tx = 7276, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 9: 0.005 Mrps, re_tx = 8007, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 11: 0.005 Mrps, re_tx = 6563, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 61: 0.005 Mrps, re_tx = 6549, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 31: 0.005 Mrps, re_tx = 6551, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 58: 0.004 Mrps, re_tx = 7341, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 19: 0.005 Mrps, re_tx = 6920, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 36: 0.005 Mrps, re_tx = 8060, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 42: 0.005 Mrps, re_tx = 6008, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 30: 0.005 Mrps, re_tx = 5829, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 54: 0.005 Mrps, re_tx = 7669, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 48: 0.005 Mrps, re_tx = 6052, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 59: 0.005 Mrps, re_tx = 7495, still_in_wheel = 0. RX: 5K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 51: 0.005 Mrps, re_tx = 6936, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 41: 0.005 Mrps, re_tx = 7672, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 29: 0.005 Mrps, re_tx = 6236, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 46: 0.004 Mrps, re_tx = 6054, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 25: 0.005 Mrps, re_tx = 7340, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 14: 0.005 Mrps, re_tx = 6261, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 23: 0.004 Mrps, re_tx = 7016, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 39: 0.004 Mrps, re_tx = 7167, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 27: 0.005 Mrps, re_tx = 6615, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 34: 0.004 Mrps, re_tx = 6440, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 62: 0.004 Mrps, re_tx = 7755, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 38: 0.004 Mrps, re_tx = 7723, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 43: 0.004 Mrps, re_tx = 7181, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 56: 0.004 Mrps, re_tx = 6951, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 49: 0.004 Mrps, re_tx = 6437, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 45: 0.005 Mrps, re_tx = 7375, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 7: 0.005 Mrps, re_tx = 6807, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 52: 0.005 Mrps, re_tx = 7736, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 47: 0.004 Mrps, re_tx = 7045, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 40: 0.005 Mrps, re_tx = 7184, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 44: 0.004 Mrps, re_tx = 6631, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 2, thread 37: 0.004 Mrps, re_tx = 7969, still_in_wheel = 0. RX: 4K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+result 5:
+Invalid log level: 0
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+result 6:
+Process 3, thread 34: 0.024 Mrps, re_tx = 5845, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 35: 0.024 Mrps, re_tx = 6076, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 16: 0.023 Mrps, re_tx = 5068, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 56: 0.024 Mrps, re_tx = 4914, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 53: 0.024 Mrps, re_tx = 4837, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 17: 0.023 Mrps, re_tx = 5548, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 8: 0.024 Mrps, re_tx = 5898, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 12: 0.024 Mrps, re_tx = 5589, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 55: 0.024 Mrps, re_tx = 5501, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 18: 0.024 Mrps, re_tx = 6036, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 57: 0.024 Mrps, re_tx = 5176, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 19: 0.024 Mrps, re_tx = 5192, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 42: 0.024 Mrps, re_tx = 4902, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 58: 0.023 Mrps, re_tx = 5780, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 28: 0.024 Mrps, re_tx = 4815, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 60: 0.024 Mrps, re_tx = 5656, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 33: 0.024 Mrps, re_tx = 5617, still_in_wheel = 0. RX: 24K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 29: 0.024 Mrps, re_tx = 5825, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 25: 0.024 Mrps, re_tx = 6098, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 32: 0.024 Mrps, re_tx = 5037, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 27: 0.024 Mrps, re_tx = 5298, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 37: 0.024 Mrps, re_tx = 5123, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 46: 0.024 Mrps, re_tx = 5184, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 50: 0.023 Mrps, re_tx = 5445, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 48: 0.023 Mrps, re_tx = 5081, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 51: 0.024 Mrps, re_tx = 5511, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 52: 0.023 Mrps, re_tx = 5300, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 22: 0.023 Mrps, re_tx = 5999, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 26: 0.023 Mrps, re_tx = 5121, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 62: 0.023 Mrps, re_tx = 6457, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 13: 0.023 Mrps, re_tx = 5833, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 21: 0.022 Mrps, re_tx = 5220, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 49: 0.022 Mrps, re_tx = 5893, still_in_wheel = 0. RX: 21K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 54: 0.023 Mrps, re_tx = 5216, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 20: 0.023 Mrps, re_tx = 4755, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 23: 0.023 Mrps, re_tx = 5205, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 61: 0.023 Mrps, re_tx = 5486, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 24: 0.023 Mrps, re_tx = 6190, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 30: 0.023 Mrps, re_tx = 5514, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 31: 0.023 Mrps, re_tx = 5959, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 63: 0.023 Mrps, re_tx = 5684, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 39: 0.024 Mrps, re_tx = 5265, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 38: 0.023 Mrps, re_tx = 5564, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 45: 0.023 Mrps, re_tx = 6401, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 47: 0.023 Mrps, re_tx = 5006, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 43: 0.023 Mrps, re_tx = 5062, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 36: 0.023 Mrps, re_tx = 5676, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 41: 0.023 Mrps, re_tx = 5162, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 44: 0.023 Mrps, re_tx = 5639, still_in_wheel = 0. RX: 23K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+Process 3, thread 40: 0.023 Mrps, re_tx = 5427, still_in_wheel = 0. RX: 22K resps, 0K reqs. Resps/batch: min 0K, max 0K. Latency: N/A. Rate = N/A.
+result 7:
+Invalid log level: 0
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
