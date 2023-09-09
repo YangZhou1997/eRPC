@@ -33,8 +33,8 @@ cd eRPC && git checkout r650 && ./ins_deps.sh
 ./scripts/do.sh 1 0
 
 # or
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 1 --numa_1_ports 1,3 --process_id=0 --numa_node=0 --num_threads 10 --is_client 1 --num_dst_threads 1
-autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 1 --numa_1_ports 1,3 --process_id=1 --numa_node=0 --num_threads 1 --is_client 0
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 2 --numa_1_ports 2 --process_id=0 --numa_node=1 --num_threads 10 --is_client 1 --num_dst_threads 1
+autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verbose 0 --batch_size 1 --concurrency 60 --msg_size 40 --num_processes 2 --numa_0_ports 2 --numa_1_ports 2 --process_id=1 --numa_node=1 --num_threads 1 --is_client 0
 # this gives us around 2.7 Mops/core
 ```
 
