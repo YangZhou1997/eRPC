@@ -22,33 +22,13 @@ Make sure the experiment NICs in xl170 instances are connected when specifying l
 
 ```
 git clone git@github.com:YangZhou1997/eRPC.git
-bash eRPC/scripts/packages/ubuntu18/required.sh
+cd eRPC && ./ins_deps.sh
 
-sudo apt-get install build-essential cmake gcc libudev-dev libnl-3-dev libnl-route-3-dev ninja-build pkg-config valgrind python3-dev cython3 python3-docutils pandoc make cmake g++ gcc libnuma-dev libgflags-dev numactl -y
-
-git clone https://github.com/linux-rdma/rdma-core.git
-pushd rdma-core && cmake . -DCMAKE_INSTALL_PREFIX:PATH=/usr
-sudo make install -j && popd
-
-sudo modprobe ib_uverbs
-sudo modprobe mlx4_ib
-
-wget https://fast.dpdk.org/rel/dpdk-19.11.5.tar.xz
-tar -xvf dpdk-19.11.5.tar.xz
-# Edit dpdk-stable-19.11.5/config/common_base by changing CONFIG_RTE_LIBRTE_MLX5_PMD and CONFIG_RTE_LIBRTE_MLX4_PMD to y instead of n.
-pushd dpdk-stable-19.11.5/ && sudo make -j install T=x86_64-native-linuxapp-gcc DESTDIR=/usr && popd
-
-sudo bash -c "echo 1024 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages"
-sudo bash -c "echo kernel.shmmax = 9223372036854775807 >> /etc/sysctl.conf"
-sudo bash -c "echo kernel.shmall = 1152921504606846720 >> /etc/sysctl.conf"
-sudo sysctl -p /etc/sysctl.conf
-
-cd eRPC && cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
-make small_rpc_tput -j
 # change scripts/autorun_process_file as following: 
-# <Public IPv4 address of node #1> 31850 0
-# <Public IPv4 address of node #2> 31850 0
+<Public IPv4 address of node #1> 31850 0
+<Public IPv4 address of node #2> 31850 0
 
+# run small_rpc_tput by: 
 ./scripts/do.sh 0 0
 ./scripts/do.sh 1 0
 
@@ -58,9 +38,9 @@ autorun_app=small_rpc_tput sudo ./build/small_rpc_tput --test_ms 20000 --sm_verb
 # this gives us around 2.7 Mops/core
 ```
 
-Note: by default, we use `ens1f1` interface to run the experiment, which corresponds to dpdk port index of 1 (checking it via `sudo ./dpdk-stable-19.11.5/usertools/dpdk-devbind.py -s`)
+Note: by default, we use `ens2f0np0` interface to run the experiment, which corresponds to dpdk port index of 3 (checking it via `sudo ./dpdk-stable-19.11.5/usertools/dpdk-devbind.py -s`)
 
-## Requirements
+## Requirementsens2f0np0
  * Toolchain: A C++11 compiler and CMake 2.8+
  * See `scripts/packages/` for required software packages for your distro.
  * The latest `rdma_core`, preferably installed from source
