@@ -286,25 +286,21 @@ void connect_sessions(AppContext &c) {
   // Create a session to each thread in the cluster except to:
   // (a) all threads on this machine if DPDK is used (because no loopback), or
   // (b) this thread if a non-DPDK transport is used.
-  for (size_t p_i = 0; p_i < FLAGS_num_processes; p_i++) {
-    if ((erpc::CTransport::kTransportType == erpc::TransportType::kDPDK) &&
-        (p_i == FLAGS_process_id)) {
-      continue;
-    }
+  size_t p_i = 0;
+  erpc::rt_assert(p_i != FLAGS_process_id, "connect_sessions error");
 
-    std::string remote_uri = erpc::get_uri_for_process(p_i);
+  std::string remote_uri = erpc::get_uri_for_process(p_i);
 
-    if (FLAGS_sm_verbose == 1) {
-      printf("Process %zu, thread %zu: Creating sessions to %s.\n",
-             FLAGS_process_id, c.thread_id_, remote_uri.c_str());
-    }
+  if (FLAGS_sm_verbose == 1) {
+    printf("Process %zu, thread %zu: Creating sessions to %s.\n",
+           FLAGS_process_id, c.thread_id_, remote_uri.c_str());
+  }
 
-    for (size_t t_i = 0; t_i < FLAGS_num_dst_threads; t_i++) {
-      if (FLAGS_process_id == p_i && c.thread_id_ == t_i) continue;
-      int session_num = c.rpc_->create_session(remote_uri, t_i);
-      erpc::rt_assert(session_num >= 0, "Failed to create session");
-      c.session_num_vec_.push_back(session_num);
-    }
+  for (size_t t_i = 0; t_i < FLAGS_num_dst_threads; t_i++) {
+    if (FLAGS_process_id == p_i && c.thread_id_ == t_i) continue;
+    int session_num = c.rpc_->create_session(remote_uri, t_i);
+    erpc::rt_assert(session_num >= 0, "Failed to create session");
+    c.session_num_vec_.push_back(session_num);
   }
 
   while (c.num_sm_resps_ != c.session_num_vec_.size()) {
