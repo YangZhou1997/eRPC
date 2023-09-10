@@ -1,22 +1,22 @@
 result 0:
-pkt: 3036318
-suc_pkt: 3036318
+pkt: 2966914
+suc_pkt: 2966914
 17 throughput
-pkt: 3036760
-suc_pkt: 3036760
+pkt: 2963021
+suc_pkt: 2963021
 18 throughput
-pkt: 3037696
-suc_pkt: 3037696
+pkt: 2960603
+suc_pkt: 2960603
 19 throughput
-pkt: 3035943
-suc_pkt: 3035943
+pkt: 2961204
+suc_pkt: 2961203
 20 throughput
-pkt: 3041557
-suc_pkt: 3041557
-throughput: 3167405
-goodput: 3167405
-average latency: 15
-median latency: 15
+pkt: 2959133
+suc_pkt: 2959134
+throughput: 2964754
+goodput: 2964754
+average latency: 0
+median latency: 16
 99th percentile latency: 22
 99.9th percentile latency: 26
 result 1:
@@ -36,23 +36,23 @@ EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
 result 2:
-pkt: 3040176
-suc_pkt: 3040176
+pkt: 3022889
+suc_pkt: 3022889
 17 throughput
-pkt: 3039225
-suc_pkt: 3039225
+pkt: 3020457
+suc_pkt: 3020457
 18 throughput
-pkt: 3037246
-suc_pkt: 3037244
+pkt: 3018439
+suc_pkt: 3018438
 19 throughput
-pkt: 3033911
-suc_pkt: 3033912
+pkt: 3019800
+suc_pkt: 3019801
 20 throughput
-pkt: 3038881
-suc_pkt: 3038882
-throughput: 3167879
-goodput: 3167879
-average latency: 15
+pkt: 3021096
+suc_pkt: 3021096
+throughput: 3022708
+goodput: 3022708
+average latency: 0
 median latency: 15
 99th percentile latency: 22
 99.9th percentile latency: 26
@@ -73,23 +73,23 @@ EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
 result 4:
-pkt: 3046761
-suc_pkt: 3046761
+pkt: 3045402
+suc_pkt: 3045402
 17 throughput
-pkt: 3047618
-suc_pkt: 3047618
+pkt: 3048029
+suc_pkt: 3048029
 18 throughput
-pkt: 3046783
-suc_pkt: 3046781
+pkt: 3046247
+suc_pkt: 3046247
 19 throughput
-pkt: 3045698
-suc_pkt: 3045700
+pkt: 3044512
+suc_pkt: 3044512
 20 throughput
-pkt: 3044641
-suc_pkt: 3044640
-throughput: 3172803
-goodput: 3172803
-average latency: 15
+pkt: 3053234
+suc_pkt: 3053234
+throughput: 3046394
+goodput: 3046394
+average latency: 0
 median latency: 15
 99th percentile latency: 22
 99.9th percentile latency: 26

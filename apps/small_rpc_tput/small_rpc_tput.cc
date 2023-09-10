@@ -21,7 +21,7 @@
 
 #define STORE 0
 #define LOCK_FASST 1
-#define APP STORE
+#define APP LOCK_FASST
 
 static constexpr size_t kAppEvLoopMs = 1000;  // Duration of event loop
 static constexpr size_t kAppReqType = 1;      // eRPC request type
