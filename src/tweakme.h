@@ -14,7 +14,7 @@ static constexpr size_t kRpcRTOUs = 5000;
 
 // Congestion control
 static constexpr bool kEnableCc = false;
-static constexpr bool kEnableCcOpts = true;
+static constexpr bool kEnableCcOpts = false;
 
 static constexpr bool kCcRTT = kEnableCc;       ///< Measure per-packet RTT
 static constexpr bool kCcRateComp = kEnableCc;  ///< Perform rate computation

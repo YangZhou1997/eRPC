@@ -31,4 +31,3 @@ sudo sysctl -p /etc/sysctl.conf
 sudo mkdir /mnt/huge
 sudo mount -t hugetlbfs nodev /mnt/huge
 
-cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
