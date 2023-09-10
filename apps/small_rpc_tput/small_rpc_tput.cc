@@ -239,7 +239,7 @@ static inline void kvs_delete(kvs *kvs, uint64_t key) {
   panic("kvs_delete: key not found");
 }
 
-constexpr int kSubscriberNum = 8000000;
+constexpr int kSubscriberNum = 2000000;
 constexpr int A = 1048575;
 constexpr uint8_t kValMagic = 0x5a;
 
