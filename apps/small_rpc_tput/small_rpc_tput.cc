@@ -19,9 +19,20 @@
 #include "util/latency.h"
 #include "util/numautils.h"
 
+#define STORE 0
+#define LOCK_FASST 1
+#define APP LOCK_FASST
+
 static constexpr size_t kAppEvLoopMs = 1000;  // Duration of event loop
 static constexpr size_t kAppReqType = 1;      // eRPC request type
 static constexpr size_t kMaxClientsPerTh = 128;
+#if APP == LOCK_FASST
+// maximum number of locks
+constexpr uint32_t kLockHashSize = 36000000;
+
+// maximum number of locks clients will query
+constexpr uint32_t kQueryedLockSize = 24000000;
+#endif
 
 DEFINE_uint64(num_threads, 0, "Number of foreground threads per machine");
 DEFINE_uint64(num_clients, 0, "Number of simulated clients in total");
@@ -293,6 +304,9 @@ static inline void populate_table(kvs *table, std::string populate_mode) {
   }      // loop s_id
 }
 
+#pragma pack(push, 1)
+#if APP == STORE
+
 // packet types
 enum PktType {
   // client
@@ -310,14 +324,12 @@ enum PktType {
   kRejectInsert = 9,
 };
 
-#pragma pack(push, 1)
 struct message {
   uint8_t type;           // packet type
   uint64_t key;           // key
   uint8_t val[kValSize];  // value
   uint32_t ver;           // version
 };
-#pragma pack(pop)
 
 // the main table
 kvs *table;
@@ -325,9 +337,38 @@ kvs *table;
 // populate mode
 std::string populate_mode = "all";
 
+#elif APP == LOCK_FASST
+
+enum PktType {
+  kRead = 0,
+  kAcquireLock = 1,
+  kAbort = 2,
+  kCommit = 3,
+  kGrantRead = 4,
+  kGrantLock = 5,
+  kRejectLock = 6,
+  kAbortAck = 7,
+  kCommitAck = 8,
+};
+
+struct message {
+  uint8_t type;
+  uint32_t lid;
+  uint32_t ver;
+};
+
+// transaction locks
+volatile int locks[kLockHashSize];
+
+// version table
+uint32_t ver_table[kLockHashSize];
+
+#endif
+#pragma pack(pop)
+
 constexpr uint32_t kStatsPollIntv = 1;
-constexpr int kStatsStartSec = 5;
-constexpr int kStatsEndSec = 15;
+constexpr int kStatsStartSec = 10;
+constexpr int kStatsEndSec = 20;
 
 template <class T>
 T Percentile(std::vector<T> &vectorIn, double percent) {
@@ -360,6 +401,7 @@ void CollectStat() {
   printf("median latency: %lu\n", Percentile(lat_aggr, 50));
   printf("99th percentile latency: %lu\n", Percentile(lat_aggr, 99));
   printf("99.9th percentile latency: %lu\n", Percentile(lat_aggr, 99.9));
+  fflush(stderr);
 }
 
 // print throughput
@@ -382,14 +424,14 @@ void ctrl_c_handler(int) { ctrl_c_pressed = 1; }
 union tag_t {
   struct {
     uint64_t client_i : 32;
-    uint64_t msgbuf_i : 32;
+    uint64_t padding : 32;
   } s;
 
   void *_tag;
 
-  tag_t(uint64_t client_i, uint64_t msgbuf_i) {
+  tag_t(uint64_t client_i, uint64_t padding) {
     s.client_i = client_i;
-    s.msgbuf_i = msgbuf_i;
+    s.padding = padding;
   }
   tag_t(void *_tag) : _tag(_tag) {}
 };
@@ -420,6 +462,7 @@ void send_reqs(PerThContext *c, size_t client_i) {
 
   message *msg = (message *)bc.req_msgbuf.buf_;
 
+#if APP == STORE
   // transaction parameters
   uint32_t s_id = tatp_nurand(&tg_seed);
   uint8_t sf_type = (fastrand(&tg_seed) % 4) + 1;
@@ -433,6 +476,23 @@ void send_reqs(PerThContext *c, size_t client_i) {
 
   msg->type = PktType::kRead;
   msg->key = store_key.key;
+#elif APP == LOCK_FASST
+  // A simplified version of ./trace_init.sh 24000000 0.8 2000
+  auto type_rnd = fastrand(&tg_seed) % 100;
+  auto lid = fastrand(&tg_seed) % kQueryedLockSize;
+
+  if (type_rnd < 80) {
+    // Read lock;
+    *msg = {PktType::kRead, lid, 0};
+  } else {
+    // Write lock;
+    if (fastrand(&tg_seed) % 2) {
+      *msg = {PktType::kAcquireLock, lid, 0};
+    } else {
+      *msg = {PktType::kCommit, lid, 0};
+    }
+  }
+#endif
 
   bc.req_tsc = erpc::rdtsc();
 
@@ -456,6 +516,8 @@ void req_handler(erpc::ReqHandle *req_handle, void *_context) {
   message *resp_msg = (message *)req_handle->pre_resp_msgbuf_.buf_;
 
   int ret;
+
+#if APP == STORE
   switch (msg->type) {
     case PktType::kRead:
       resp_msg->key = msg->key;
@@ -477,6 +539,40 @@ void req_handler(erpc::ReqHandle *req_handle, void *_context) {
 
     default: panic("unknown operation %d", msg->type);
   }
+#elif APP == LOCK_FASST
+  uint64_t hash = fasthash64(&msg->lid, sizeof(msg->lid), 0xdeadbeef);
+  uint32_t lock_hash = (uint32_t)(hash % (uint64_t)kLockHashSize);
+
+  switch (msg->type) {
+    case PktType::kRead:
+      resp_msg->type = PktType::kGrantRead;
+      resp_msg->ver = ver_table[lock_hash];
+      break;
+
+    case PktType::kAcquireLock:
+      ret = __sync_val_compare_and_swap(&locks[lock_hash], 0, 1);
+      if (ret == 0) {
+        resp_msg->type = PktType::kGrantLock;
+      } else if (ret == 1) {
+        resp_msg->type = PktType::kRejectLock;
+      } else
+        panic("unknown lock state");
+      break;
+
+    case PktType::kAbort:
+      __sync_val_compare_and_swap(&locks[lock_hash], 1, 0);
+      resp_msg->type = PktType::kAbortAck;
+      break;
+
+    case PktType::kCommit:
+      ver_table[lock_hash]++;
+      __sync_val_compare_and_swap(&locks[lock_hash], 1, 0);
+      resp_msg->type = PktType::kCommitAck;
+      break;
+
+    default: panic("unknown packet type %d", msg->type);
+  }
+#endif
 
   c->rpc_->enqueue_response(req_handle, &req_handle->pre_resp_msgbuf_);
 }
@@ -500,12 +596,18 @@ void app_cont_func(void *_context, void *_tag) {
     lat_samples[c->thread_id_].push_back(static_cast<size_t>(req_lat_us));
   }
 
+#if APP == STORE
   message *msg = (message *)bc.resp_msgbuf.buf_;
   if (msg->type == PktType::kNotExist) {
   } else {
     assert(msg->type == PktType::kGrantRead);
     if (stat_started) suc_pkt_cnt[c->thread_id_]++;
   }
+#elif APP == LOCK_FASST
+  // we make simplification that assumes all lock acquire is successfully, based
+  // on our benchmarking on caladan.
+  if (stat_started) suc_pkt_cnt[c->thread_id_]++;
+#endif
 
   send_reqs(c, tag.s.client_i);
 }
@@ -601,7 +703,7 @@ void thread_func(size_t thread_id, erpc::Nexus *nexus) {
       }
     }
   } else {
-    for (size_t i = 0; i < FLAGS_test_ms; i += 1000) {
+    for (size_t i = 0;; i += 1000) {
       rpc.run_event_loop(kAppEvLoopMs);  // 1 second
       if (ctrl_c_pressed == 1) break;
     }
@@ -614,6 +716,7 @@ int main(int argc, char **argv) {
 
   erpc::rt_assert(FLAGS_numa_node <= 1, "Invalid NUMA node");
 
+#if APP == STORE
   int hash_size = kSubscriberNum * 18 / kKeysPerEntry;
 
   if (!FLAGS_is_client) {
@@ -621,6 +724,7 @@ int main(int argc, char **argv) {
     kvs_init(table, hash_size);
     populate_table(table, populate_mode);
   }
+#endif
 
   pkt_cnt.resize(FLAGS_num_threads, 0);
   suc_pkt_cnt.resize(FLAGS_num_threads, 0);

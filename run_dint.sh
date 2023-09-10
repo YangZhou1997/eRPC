@@ -22,7 +22,10 @@ def kill_all():
     sleep(5)
 
 
-def prepare_binaries():
+def prepare_binaries(app):
+    cmd = f'sed "s/#define\ APP.*/#define\ APP\ {"STORE" if app == "store" else "LOCK_FASST"}/g" apps/small_rpc_tput/small_rpc_tput.cc -i'
+    os.system(cmd)
+
     executors = []
     for machine in clients:
         e = subprocess.Popen(['rsync', '-auv', '--exclude=.git/', f'{erpc_dir_path}/', f'{machine}:{erpc_dir_path}'],
@@ -46,7 +49,7 @@ def prepare_binaries():
 
 
 def run_erpc_expr(app, num_of_uthreads):
-    msg_size = 40
+    global num_cores
     num_processes = len(servers) + len(clients)
 
     kill_all()
@@ -97,15 +100,21 @@ if __name__ == "__main__":
         exit(1)
 
     if (sys.argv[1] == "binary"):
-        prepare_binaries()
-    elif (sys.argv[1] == "run"):
-        if (len(sys.argv) != 4):
+        if (len(sys.argv) != 3):
             print(
-                "Usage: ./run_dint.sh run [store|lock_fasst] [#uthreads_per_machine]")
+                "Usage: ./run_dint.sh run [store|lock_fasst]")
+            exit(1)
+        app = sys.argv[2]
+        prepare_binaries(app)
+    elif (sys.argv[1] == "run"):
+        if (len(sys.argv) != 5):
+            print(
+                "Usage: ./run_dint.sh run [store|lock_fasst] [#uthreads_per_machine] [num_server_cores]")
             exit(1)
 
         app = sys.argv[2]
         nu = int(sys.argv[3])
+        num_cores = int(sys.argv[4])
         run_erpc_expr(app, nu)
     else:
         print("unknown command")
