@@ -386,14 +386,14 @@ bool stat_started = false;
 void CollectStat() {
   std::vector<uint64_t> lat_aggr;
 
-  for (size_t i = 0; i < FLAGS_num_threads; i++)
-    lat_aggr.insert(lat_aggr.end(), lat_samples[i].begin(),
-                    lat_samples[i].end());
-
   uint64_t total_pkt = std::accumulate(pkt_cnt.begin(), pkt_cnt.end(), 0UL);
   uint64_t total_suc_pkt =
       std::accumulate(suc_pkt_cnt.begin(), suc_pkt_cnt.end(), 0UL);
   uint64_t total_lat = std::accumulate(lat_aggr.begin(), lat_aggr.end(), 0UL);
+
+  for (size_t i = 0; i < FLAGS_num_threads; i++)
+    lat_aggr.insert(lat_aggr.end(), lat_samples[i].begin(),
+                    lat_samples[i].end());
 
   printf("throughput: %lu\n", total_pkt / (kStatsEndSec - kStatsStartSec));
   printf("goodput: %lu\n", total_suc_pkt / (kStatsEndSec - kStatsStartSec));
@@ -401,7 +401,7 @@ void CollectStat() {
   printf("median latency: %lu\n", Percentile(lat_aggr, 50));
   printf("99th percentile latency: %lu\n", Percentile(lat_aggr, 99));
   printf("99.9th percentile latency: %lu\n", Percentile(lat_aggr, 99.9));
-  fflush(stderr);
+  fflush(stdout);
 }
 
 // print throughput
