@@ -25,7 +25,7 @@ git clone git@github.com:YangZhou1997/eRPC.git
 cd eRPC && git checkout r650 && ./ins_deps.sh
 
 export RTE_SDK=~/dpdk
-cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on
+cmake . -DPERF=ON -DTRANSPORT=dpdk
 make small_rpc_tput -j
 
 # change scripts/autorun_process_file as following: 
