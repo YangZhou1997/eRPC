@@ -39,7 +39,7 @@ def prepare_binaries(app):
     executors = []
     for machine in servers + clients:
         sleep(0.1)
-        e = subprocess.Popen(['ssh', '-o', 'StrictHostKeyChecking=no', '-i', '~/.ssh/id_rsa', machine, f"cd {erpc_dir_path} && export RTE_SDK=~/dpdk && cmake . -DPERF=ON -DTRANSPORT=dpdk -DAZURE=on && make clean && make -j small_rpc_tput"],
+        e = subprocess.Popen(['ssh', '-o', 'StrictHostKeyChecking=no', '-i', '~/.ssh/id_rsa', machine, f"cd {erpc_dir_path} && export RTE_SDK=~/dpdk && cmake . -DPERF=ON -DTRANSPORT=dpdk && make clean && make -j small_rpc_tput"],
                              shell=False,
                              stdout=subprocess.DEVNULL,
                              stderr=subprocess.DEVNULL)
