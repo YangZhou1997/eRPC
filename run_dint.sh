@@ -8,9 +8,9 @@ import sys
 erpc_dir_path = '/users/yangzhou/eRPC'
 num_cores = 8
 
-servers = ['clnode282.clemson.cloudlab.us']
-clients = ["clnode273.clemson.cloudlab.us",
-           "clnode255.clemson.cloudlab.us", "clnode276.clemson.cloudlab.us"]
+servers = ['clnode276.clemson.cloudlab.us']
+clients = ["clnode255.clemson.cloudlab.us",
+           "clnode282.clemson.cloudlab.us", "clnode273.clemson.cloudlab.us"]
 
 
 def kill_all():

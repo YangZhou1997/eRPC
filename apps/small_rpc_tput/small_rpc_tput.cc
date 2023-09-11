@@ -21,7 +21,7 @@
 
 #define STORE 0
 #define LOCK_FASST 1
-#define APP LOCK_FASST
+#define APP STORE
 
 static constexpr size_t kAppEvLoopMs = 1000;  // Duration of event loop
 static constexpr size_t kAppReqType = 1;      // eRPC request type
@@ -389,11 +389,11 @@ void CollectStat() {
   uint64_t total_pkt = std::accumulate(pkt_cnt.begin(), pkt_cnt.end(), 0UL);
   uint64_t total_suc_pkt =
       std::accumulate(suc_pkt_cnt.begin(), suc_pkt_cnt.end(), 0UL);
-  uint64_t total_lat = std::accumulate(lat_aggr.begin(), lat_aggr.end(), 0UL);
 
   for (size_t i = 0; i < FLAGS_num_threads; i++)
     lat_aggr.insert(lat_aggr.end(), lat_samples[i].begin(),
                     lat_samples[i].end());
+  uint64_t total_lat = std::accumulate(lat_aggr.begin(), lat_aggr.end(), 0UL);
 
   printf("throughput: %lu\n", total_pkt / (kStatsEndSec - kStatsStartSec));
   printf("goodput: %lu\n", total_suc_pkt / (kStatsEndSec - kStatsStartSec));

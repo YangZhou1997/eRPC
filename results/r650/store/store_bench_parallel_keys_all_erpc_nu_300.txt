@@ -1,24 +1,24 @@
 result 0:
-pkt: 3526634
-suc_pkt: 3526634
+pkt: 2104887
+suc_pkt: 2104887
 17 throughput
-pkt: 3632156
-suc_pkt: 3632155
+pkt: 2127959
+suc_pkt: 2127959
 18 throughput
-pkt: 3746286
-suc_pkt: 3746290
+pkt: 2108992
+suc_pkt: 2108992
 19 throughput
-pkt: 3553942
-suc_pkt: 3553939
+pkt: 2189489
+suc_pkt: 2189489
 20 throughput
-pkt: 3812104
-suc_pkt: 3812104
-throughput: 3648997
-goodput: 3648997
-average latency: 0
-median latency: 80
-99th percentile latency: 156
-99.9th percentile latency: 196
+pkt: 2168802
+suc_pkt: 2168802
+throughput: 2167676
+goodput: 2167676
+average latency: 137
+median latency: 146
+99th percentile latency: 207
+99.9th percentile latency: 222
 result 1:
 Invalid log level: 0
 EAL: invalid parameters for --log-level
@@ -36,26 +36,26 @@ EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
 result 2:
-pkt: 3690966
-suc_pkt: 3690966
-15 throughput
-pkt: 3878886
-suc_pkt: 3878886
-16 throughput
-pkt: 3755994
-suc_pkt: 3755994
+pkt: 2115574
+suc_pkt: 2115574
 17 throughput
-pkt: 3733613
-suc_pkt: 3733615
+pkt: 2084836
+suc_pkt: 2084836
 18 throughput
-pkt: 3951864
-suc_pkt: 3951862
+pkt: 2179800
+suc_pkt: 2179800
 19 throughput
-pkt: 3682359
-suc_pkt: 3682361
+pkt: 2232767
+suc_pkt: 2232767
 20 throughput
-pkt: 3862805
-suc_pkt: 3862803
+pkt: 3212581
+suc_pkt: 3212581
+throughput: 2252604
+goodput: 2252604
+average latency: 131
+median latency: 139
+99th percentile latency: 207
+99.9th percentile latency: 223
 result 3:
 Invalid log level: 0
 EAL: invalid parameters for --log-level
@@ -73,26 +73,26 @@ EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
 result 4:
-pkt: 4054320
-suc_pkt: 4054321
+pkt: 2099975
+suc_pkt: 2099975
 17 throughput
-pkt: 3787127
-suc_pkt: 3787127
+pkt: 2133876
+suc_pkt: 2133876
 18 throughput
-pkt: 3917770
-suc_pkt: 3917770
+pkt: 2111254
+suc_pkt: 2111254
 19 throughput
-pkt: 3975536
-suc_pkt: 3975536
+pkt: 2184742
+suc_pkt: 2184742
 20 throughput
-pkt: 3874236
-suc_pkt: 3874236
-throughput: 3909165
-goodput: 3909165
-average latency: 0
-median latency: 71
-99th percentile latency: 153
-99.9th percentile latency: 192
+pkt: 2204426
+suc_pkt: 2204426
+throughput: 2169152
+goodput: 2169152
+average latency: 137
+median latency: 146
+99th percentile latency: 207
+99.9th percentile latency: 223
 result 5:
 Invalid log level: 0
 EAL: invalid parameters for --log-level
