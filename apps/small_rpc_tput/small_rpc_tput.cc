@@ -395,14 +395,15 @@ void CollectStat() {
                     lat_samples[i].end());
   uint64_t total_lat = std::accumulate(lat_aggr.begin(), lat_aggr.end(), 0UL);
 
-  printf("throughput: %lu\n", total_pkt / (kStatsEndSec - kStatsStartSec));
-  printf("goodput: %lu\n", total_suc_pkt / (kStatsEndSec - kStatsStartSec));
-  printf("average latency: %lu\n", total_lat / lat_aggr.size());
-  printf("median latency: %lu\n", Percentile(lat_aggr, 50));
-  printf("99th percentile latency: %lu\n", Percentile(lat_aggr, 99));
-  printf("99.9th percentile latency: %lu\n", Percentile(lat_aggr, 99.9));
-  fflush(stdout);
-  fflush(stdout);
+  fprintf(stderr, "throughput: %lu\n", total_pkt / (kStatsEndSec - kStatsStartSec));
+  fprintf(stderr, "goodput: %lu\n", total_suc_pkt / (kStatsEndSec - kStatsStartSec));
+  fprintf(stderr, "average latency: %lu\n", total_lat / lat_aggr.size());
+  fprintf(stderr, "median latency: %lu\n", Percentile(lat_aggr, 50));
+  fprintf(stderr, "99th percentile latency: %lu\n", Percentile(lat_aggr, 99));
+  fprintf(stderr, "99.9th percentile latency: %lu\n", Percentile(lat_aggr, 99.9));
+  fflush(stderr);
+  fflush(stderr);
+  sleep(1);
 }
 
 // print throughput

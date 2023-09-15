@@ -1,26 +1,25 @@
 result 0:
-pkt: 1891224
-suc_pkt: 1891224
+pkt: 1921255
+suc_pkt: 1921255
+15 throughput
+pkt: 1902555
+suc_pkt: 1902554
+16 throughput
+pkt: 1919060
+suc_pkt: 1919061
 17 throughput
-pkt: 1891179
-suc_pkt: 1891179
+pkt: 1921523
+suc_pkt: 1921523
 18 throughput
-pkt: 1891448
-suc_pkt: 1891448
+pkt: 1917769
+suc_pkt: 1917769
 19 throughput
-pkt: 1891387
-suc_pkt: 1891387
+pkt: 1916008
+suc_pkt: 1916008
 20 throughput
-pkt: 1891098
-suc_pkt: 1891098
-throughput: 1888638
-goodput: 1888638
-average latency: 68
-median latency: 67
-99th percentile latency: 84
-99.9th percentile latency: 91
+pkt: 1922159
+suc_pkt: 1922159
 result 1:
-Invalid log level: 0
 EAL: invalid parameters for --log-level
 EAL: Detected CPU lcores: 128
 EAL: Detected NUMA nodes: 2
@@ -35,140 +34,34 @@ EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
-result 2:
-pkt: 1904460
-suc_pkt: 1904460
-17 throughput
-pkt: 1903294
-suc_pkt: 1903294
-18 throughput
-pkt: 1903212
-suc_pkt: 1903212
-19 throughput
-pkt: 1903340
-suc_pkt: 1903340
-20 throughput
-pkt: 1915380
-suc_pkt: 1915380
-throughput: 1902653
-goodput: 1902653
+throughput: 1917441
+goodput: 1917441
 average latency: 67
 median latency: 66
-99th percentile latency: 85
-99.9th percentile latency: 92
-result 3:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 4:
-pkt: 1841530
-suc_pkt: 1841530
-17 throughput
-pkt: 1840273
-suc_pkt: 1840273
-18 throughput
-pkt: 1841719
-suc_pkt: 1841719
-19 throughput
-pkt: 1840716
-suc_pkt: 1840716
-20 throughput
-pkt: 1839639
-suc_pkt: 1839639
-throughput: 1838944
-goodput: 1838944
-average latency: 70
-median latency: 70
 99th percentile latency: 87
-99.9th percentile latency: 94
-result 5:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 6:
-pkt: 1857041
-suc_pkt: 1857040
-17 throughput
-pkt: 1856385
-suc_pkt: 1856385
-18 throughput
-pkt: 1857189
-suc_pkt: 1857189
-19 throughput
-pkt: 1856143
-suc_pkt: 1856143
-20 throughput
-pkt: 1854769
-suc_pkt: 1854769
-throughput: 1854284
-goodput: 1854284
-average latency: 69
-median latency: 69
-99th percentile latency: 85
-99.9th percentile latency: 92
-result 7:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 8:
-pkt: 1906873
-suc_pkt: 1906873
+99.9th percentile latency: 95
+result 2:
+pkt: 1929510
+suc_pkt: 1929510
 15 throughput
-pkt: 1905159
-suc_pkt: 1905159
+pkt: 1910505
+suc_pkt: 1910505
 16 throughput
-pkt: 1906218
-suc_pkt: 1906218
+pkt: 1927302
+suc_pkt: 1927302
 17 throughput
-pkt: 1905957
-suc_pkt: 1905957
+pkt: 1929739
+suc_pkt: 1929739
 18 throughput
-pkt: 1906366
-suc_pkt: 1906366
+pkt: 1926197
+suc_pkt: 1926197
 19 throughput
-pkt: 1904451
-suc_pkt: 1904451
+pkt: 1927102
+suc_pkt: 1927102
 20 throughput
-pkt: 1962840
-suc_pkt: 1962840
-result 9:
-Invalid log level: 0
+pkt: 1926894
+suc_pkt: 1926894
+result 3:
 EAL: invalid parameters for --log-level
 EAL: Detected CPU lcores: 128
 EAL: Detected NUMA nodes: 2
@@ -183,177 +76,34 @@ EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
-result 10:
-pkt: 1878801
-suc_pkt: 1878802
-17 throughput
-pkt: 1879319
-suc_pkt: 1879319
-18 throughput
-pkt: 1879836
-suc_pkt: 1879836
-19 throughput
-pkt: 1878543
-suc_pkt: 1878543
-20 throughput
-pkt: 1898061
-suc_pkt: 1898061
-throughput: 1878907
-goodput: 1878907
-average latency: 68
-median latency: 67
-99th percentile latency: 85
-99.9th percentile latency: 92
-result 11:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 12:
-pkt: 1855505
-suc_pkt: 1855505
-17 throughput
-pkt: 1856702
-suc_pkt: 1856702
-18 throughput
-pkt: 1855788
-suc_pkt: 1855788
-19 throughput
-pkt: 2864588
-suc_pkt: 2864588
-20 throughput
-pkt: 3164764
-suc_pkt: 3164764
-throughput: 2086369
-goodput: 2086369
-average latency: 60
+throughput: 1925050
+goodput: 1925050
+average latency: 66
 median latency: 65
 99th percentile latency: 87
-99.9th percentile latency: 100
-result 13:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 14:
-pkt: 1858737
-suc_pkt: 1858737
-17 throughput
-pkt: 1859233
-suc_pkt: 1859233
-18 throughput
-pkt: 1859238
-suc_pkt: 1859238
-19 throughput
-pkt: 1857165
-suc_pkt: 1857165
-20 throughput
-pkt: 1912173
-suc_pkt: 1912173
-throughput: 1862249
-goodput: 1862249
-average latency: 68
-median latency: 69
-99th percentile latency: 86
-99.9th percentile latency: 93
-result 15:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 16:
-pkt: 1875193
-suc_pkt: 1875193
-17 throughput
-pkt: 1876067
-suc_pkt: 1876067
-18 throughput
-pkt: 1876024
-suc_pkt: 1876024
-19 throughput
-pkt: 1870920
-suc_pkt: 1870920
-20 throughput
-pkt: 2139389
-suc_pkt: 2139389
-throughput: 1899825
-goodput: 1899825
-average latency: 67
-median latency: 67
-99th percentile latency: 84
-99.9th percentile latency: 91
-result 17:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
-result 18:
-pkt: 1885616
-suc_pkt: 1885616
+99.9th percentile latency: 94
+result 4:
+pkt: 1931108
+suc_pkt: 1931108
 15 throughput
-pkt: 1884112
-suc_pkt: 1884113
+pkt: 1917371
+suc_pkt: 1917371
 16 throughput
-pkt: 1885263
-suc_pkt: 1885262
+pkt: 1930893
+suc_pkt: 1930894
 17 throughput
-pkt: 1884163
-suc_pkt: 1884163
+pkt: 1934704
+suc_pkt: 1934703
 18 throughput
-pkt: 1885502
-suc_pkt: 1885502
+pkt: 1931192
+suc_pkt: 1931192
 19 throughput
-pkt: 1882627
-suc_pkt: 1882628
+pkt: 1929720
+suc_pkt: 1929720
 20 throughput
-pkt: 1991843
-suc_pkt: 1991842
-result 19:
-Invalid log level: 0
+pkt: 1935396
+suc_pkt: 1935396
+result 5:
 EAL: invalid parameters for --log-level
 EAL: Detected CPU lcores: 128
 EAL: Detected NUMA nodes: 2
@@ -368,66 +118,370 @@ EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
-result 20:
-pkt: 1869088
-suc_pkt: 1869088
+throughput: 1930405
+goodput: 1930405
+average latency: 66
+median latency: 65
+99th percentile latency: 87
+99.9th percentile latency: 95
+result 6:
+pkt: 1893140
+suc_pkt: 1893140
+15 throughput
+pkt: 1874424
+suc_pkt: 1874424
+16 throughput
+pkt: 1891354
+suc_pkt: 1891354
 17 throughput
-pkt: 1870140
-suc_pkt: 1870140
+pkt: 1893770
+suc_pkt: 1893770
 18 throughput
-pkt: 1871028
-suc_pkt: 1871028
+pkt: 1891076
+suc_pkt: 1891076
 19 throughput
-pkt: 1869785
-suc_pkt: 1869785
+pkt: 1890504
+suc_pkt: 1890504
 20 throughput
-pkt: 2904440
-suc_pkt: 2904440
-throughput: 1971913
-goodput: 1971913
-average latency: 65
+pkt: 1891667
+suc_pkt: 1891667
+result 7:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1889574
+goodput: 1889574
+average latency: 68
+median latency: 66
+99th percentile latency: 87
+99.9th percentile latency: 95
+result 8:
+pkt: 1888568
+suc_pkt: 1888568
+15 throughput
+pkt: 1907355
+suc_pkt: 1907356
+16 throughput
+pkt: 1905424
+suc_pkt: 1905423
+17 throughput
+pkt: 1906476
+suc_pkt: 1906476
+18 throughput
+pkt: 1906478
+suc_pkt: 1906478
+19 throughput
+pkt: 1903678
+suc_pkt: 1903678
+20 throughput
+pkt: 1910800
+suc_pkt: 1910800
+result 9:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1904535
+goodput: 1904535
+average latency: 67
+median latency: 66
+99th percentile latency: 87
+99.9th percentile latency: 94
+result 10:
+pkt: 1869920
+suc_pkt: 1869920
+15 throughput
+pkt: 1885240
+suc_pkt: 1885240
+16 throughput
+pkt: 1888526
+suc_pkt: 1888526
+17 throughput
+pkt: 1885109
+suc_pkt: 1885109
+18 throughput
+pkt: 1886750
+suc_pkt: 1886749
+19 throughput
+pkt: 1884363
+suc_pkt: 1884364
+20 throughput
+pkt: 1896326
+suc_pkt: 1896326
+result 11:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1885643
+goodput: 1885643
+average latency: 68
+median latency: 67
+99th percentile latency: 86
+99.9th percentile latency: 94
+result 12:
+pkt: 1882958
+suc_pkt: 1882958
+15 throughput
+pkt: 1884379
+suc_pkt: 1884379
+16 throughput
+pkt: 1882440
+suc_pkt: 1882440
+17 throughput
+pkt: 1886472
+suc_pkt: 1886472
+18 throughput
+pkt: 1881231
+suc_pkt: 1881231
+19 throughput
+pkt: 1892639
+suc_pkt: 1892640
+20 throughput
+pkt: 1990438
+suc_pkt: 1990437
+result 13:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1893643
+goodput: 1893643
+average latency: 67
+median latency: 66
+99th percentile latency: 87
+99.9th percentile latency: 95
+result 14:
+pkt: 1868165
+suc_pkt: 1868165
+15 throughput
+pkt: 1882641
+suc_pkt: 1882640
+16 throughput
+pkt: 1886132
+suc_pkt: 1886133
+17 throughput
+pkt: 1883294
+suc_pkt: 1883294
+18 throughput
+pkt: 1882661
+suc_pkt: 1882661
+19 throughput
+pkt: 1886132
+suc_pkt: 1886132
+20 throughput
+pkt: 1910655
+suc_pkt: 1910655
+result 15:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1885327
+goodput: 1885327
+average latency: 68
+median latency: 66
+99th percentile latency: 87
+99.9th percentile latency: 96
+result 16:
+pkt: 1888540
+suc_pkt: 1888540
+15 throughput
+pkt: 1907147
+suc_pkt: 1907146
+16 throughput
+pkt: 1908232
+suc_pkt: 1908233
+17 throughput
+pkt: 1907670
+suc_pkt: 1907670
+18 throughput
+pkt: 1910854
+suc_pkt: 1910854
+19 throughput
+pkt: 1905513
+suc_pkt: 1905515
+20 throughput
+pkt: 1916389
+suc_pkt: 1916387
+result 17:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1906370
+goodput: 1906370
+average latency: 67
+median latency: 66
+99th percentile latency: 87
+99.9th percentile latency: 95
+result 18:
+pkt: 1911074
+suc_pkt: 1911074
+15 throughput
+pkt: 1927339
+suc_pkt: 1927339
+16 throughput
+pkt: 1929509
+suc_pkt: 1929510
+17 throughput
+pkt: 1927059
+suc_pkt: 1927058
+18 throughput
+pkt: 1928752
+suc_pkt: 1928752
+19 throughput
+pkt: 1926566
+suc_pkt: 1926566
+20 throughput
+pkt: 1943458
+suc_pkt: 1943458
+result 19:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1927858
+goodput: 1927858
+average latency: 66
+median latency: 65
+99th percentile latency: 86
+99.9th percentile latency: 94
+result 20:
+pkt: 1897525
+suc_pkt: 1897525
+15 throughput
+pkt: 1912658
+suc_pkt: 1912658
+16 throughput
+pkt: 1914355
+suc_pkt: 1914355
+17 throughput
+pkt: 1912077
+suc_pkt: 1912077
+18 throughput
+pkt: 1914701
+suc_pkt: 1914701
+19 throughput
+pkt: 1911956
+suc_pkt: 1911956
+20 throughput
+pkt: 1928289
+suc_pkt: 1928289
+result 21:
+EAL: invalid parameters for --log-level
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 2
+EAL: Auto-detected process type: PRIMARY
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 1048576 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
+EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
+TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1913377
+goodput: 1913377
+average latency: 67
 median latency: 66
 99th percentile latency: 86
-99.9th percentile latency: 99
-result 21:
-Invalid log level: 0
-EAL: invalid parameters for --log-level
-EAL: Detected CPU lcores: 128
-EAL: Detected NUMA nodes: 2
-EAL: Auto-detected process type: PRIMARY
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 1048576 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.0 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
-EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
-TELEMETRY: No legacy callbacks, legacy socket not created
+99.9th percentile latency: 94
 result 22:
-pkt: 1849892
-suc_pkt: 1849892
+pkt: 1877278
+suc_pkt: 1877278
+15 throughput
+pkt: 1890215
+suc_pkt: 1890215
+16 throughput
+pkt: 1894599
+suc_pkt: 1894599
 17 throughput
-pkt: 1850462
-suc_pkt: 1850462
+pkt: 1890544
+suc_pkt: 1890544
 18 throughput
-pkt: 1850488
-suc_pkt: 1850488
+pkt: 1891791
+suc_pkt: 1891791
 19 throughput
-pkt: 1846209
-suc_pkt: 1846209
+pkt: 1889579
+suc_pkt: 1889579
 20 throughput
-pkt: 2172084
-suc_pkt: 2172084
-throughput: 1879919
-goodput: 1879919
-average latency: 67
-median latency: 68
-99th percentile latency: 85
-99.9th percentile latency: 92
+pkt: 1904782
+suc_pkt: 1904781
 result 23:
-Invalid log level: 0
 EAL: invalid parameters for --log-level
 EAL: Detected CPU lcores: 128
 EAL: Detected NUMA nodes: 2
@@ -442,3 +496,9 @@ EAL: Probe PCI driver: mlx5_pci (15b3:1017) device: 0000:31:00.1 (socket 0)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.0 (socket 1)
 EAL: Probe PCI driver: mlx5_pci (15b3:101d) device: 0000:ca:00.1 (socket 1)
 TELEMETRY: No legacy callbacks, legacy socket not created
+throughput: 1891501
+goodput: 1891501
+average latency: 68
+median latency: 66
+99th percentile latency: 87
+99.9th percentile latency: 95
