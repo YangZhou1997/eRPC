@@ -21,7 +21,7 @@
 
 #define STORE 0
 #define LOCK_FASST 1
-#define APP STORE
+#define APP LOCK_FASST
 
 static constexpr size_t kAppEvLoopMs = 1000;  // Duration of event loop
 static constexpr size_t kAppReqType = 1;      // eRPC request type
@@ -402,6 +402,7 @@ void CollectStat() {
   printf("99th percentile latency: %lu\n", Percentile(lat_aggr, 99));
   printf("99.9th percentile latency: %lu\n", Percentile(lat_aggr, 99.9));
   fflush(stdout);
+  fflush(stdout);
 }
 
 // print throughput
@@ -733,7 +734,7 @@ int main(int argc, char **argv) {
   printf("finish initialization\n");
 
   // We create a bit fewer sessions
-  const size_t num_sessions = 2 * FLAGS_num_processes * FLAGS_num_threads;
+  const size_t num_sessions = 2 * FLAGS_num_processes * FLAGS_num_processes;
   erpc::rt_assert(num_sessions * erpc::kSessionCredits <=
                       erpc::Transport::kNumRxRingEntries,
                   "Too few ring buffers");

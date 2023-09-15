@@ -8,19 +8,19 @@ import sys
 erpc_dir_path = '/users/yangzhou/eRPC'
 num_cores = 8
 
-servers = ['clnode255.clemson.cloudlab.us']
-clients = ["clnode280.clemson.cloudlab.us",
-           "clnode254.clemson.cloudlab.us",
-           "clnode269.clemson.cloudlab.us",
-           "clnode272.clemson.cloudlab.us",
-           "clnode253.clemson.cloudlab.us",
-           "clnode261.clemson.cloudlab.us",
-           "clnode260.clemson.cloudlab.us",
-           "clnode264.clemson.cloudlab.us",
-           "clnode275.clemson.cloudlab.us",
-           "clnode267.clemson.cloudlab.us",
-           "clnode281.clemson.cloudlab.us",
-           "clnode265.clemson.cloudlab.us",
+servers = ['clnode278.clemson.cloudlab.us']
+clients = ['clnode263.clemson.cloudlab.us',
+           'clnode279.clemson.cloudlab.us',
+           'clnode257.clemson.cloudlab.us',
+           'clnode256.clemson.cloudlab.us',
+           'clnode277.clemson.cloudlab.us',
+           'clnode266.clemson.cloudlab.us',
+           'clnode282.clemson.cloudlab.us',
+           'clnode283.clemson.cloudlab.us',
+           'clnode262.clemson.cloudlab.us',
+           'clnode274.clemson.cloudlab.us',
+           'clnode273.clemson.cloudlab.us',
+           'clnode276.clemson.cloudlab.us',
            ]
 
 
@@ -39,7 +39,7 @@ def prepare_binaries(app):
 
     executors = []
     for machine in clients:
-        e = subprocess.Popen(['rsync', '-auv', '--exclude=.git/', f'{erpc_dir_path}/', f'{machine}:{erpc_dir_path}'],
+        e = subprocess.Popen(['rsync', '-auv', '-e', 'ssh -o StrictHostKeyChecking=no', '--exclude=.git/', f'{erpc_dir_path}/', f'{machine}:{erpc_dir_path}'],
                              shell=False,
                              stdout=subprocess.DEVNULL,
                              stderr=subprocess.DEVNULL)
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     if (sys.argv[1] == "binary"):
         if (len(sys.argv) != 3):
             print(
-                "Usage: ./run_dint.sh run [store|lock_fasst]")
+                "Usage: ./run_dint.sh binary [store|lock_fasst]")
             exit(1)
         app = sys.argv[2]
         prepare_binaries(app)
