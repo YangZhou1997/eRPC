@@ -7,9 +7,13 @@ function force_cleanup {
 trap force_cleanup SIGINT
 
 
-./run_dint.sh binary lock_fasst
+# ./run_dint.sh binary lock_fasst
+./run_dint.sh run lock_fasst 15 8
+./run_dint.sh run lock_fasst 20 8
 ./run_dint.sh run lock_fasst 25 8
-./run_dint.sh run lock_fasst 130 8
+./run_dint.sh run lock_fasst 30 8
+./run_dint.sh run lock_fasst 35 8
+./run_dint.sh run lock_fasst 40 8
 
 # nu_erpc=$(seq 2 2 5; seq 5 5 151)
 # ./run_dint.sh binary store
