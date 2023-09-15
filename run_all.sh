@@ -6,29 +6,20 @@ function force_cleanup {
 }
 trap force_cleanup SIGINT
 
+nu_erpc=$(seq 2 2 5; seq 5 5 151)
+./run_dint.sh binary store
+for nu in ${nu_erpc[@]}; do
+  timeout 600s ./run_dint.sh run store $nu 8 || true
+  if [ $? -ne 124 ]; then
+    echo "erpc store $nu 8 done"
+  fi
+done
 
-# ./run_dint.sh binary lock_fasst
-./run_dint.sh run lock_fasst 15 8
-./run_dint.sh run lock_fasst 20 8
-./run_dint.sh run lock_fasst 25 8
-./run_dint.sh run lock_fasst 30 8
-./run_dint.sh run lock_fasst 35 8
-./run_dint.sh run lock_fasst 40 8
-
-# nu_erpc=$(seq 2 2 5; seq 5 5 151)
-# ./run_dint.sh binary store
-# for nu in ${nu_erpc[@]}; do
-#   timeout 600s ./run_dint.sh run store $nu 8 || true
-#   if [ $? -ne 124 ]; then
-#     echo "erpc store $nu 8 done"
-#   fi
-# done
-
-# nu_erpc=$(seq 2 2 5; seq 5 5 151)
-# ./run_dint.sh binary lock_fasst
-# for nu in ${nu_erpc[@]}; do
-#   timeout 600s ./run_dint.sh run lock_fasst $nu 8 || true
-#   if [ $? -ne 124 ]; then
-#     echo "erpc lock_fasst $nu 8 done"
-#   fi
-# done
+nu_erpc=$(seq 2 2 5; seq 5 5 151)
+./run_dint.sh binary lock_fasst
+for nu in ${nu_erpc[@]}; do
+  timeout 600s ./run_dint.sh run lock_fasst $nu 8 || true
+  if [ $? -ne 124 ]; then
+    echo "erpc lock_fasst $nu 8 done"
+  fi
+done
